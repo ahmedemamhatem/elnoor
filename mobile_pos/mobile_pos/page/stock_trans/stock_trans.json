@@ -1,0 +1,23 @@
+{
+ "content": null,
+ "creation": "2025-10-29 19:59:09.098701",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2025-10-29 19:59:09.098701",
+ "modified_by": "Administrator",
+ "module": "Mobile Pos",
+ "name": "stock-trans",
+ "owner": "Administrator",
+ "page_name": "stock-trans",
+ "roles": [
+  {
+   "role": "All"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "إدارة المخزون"
+}

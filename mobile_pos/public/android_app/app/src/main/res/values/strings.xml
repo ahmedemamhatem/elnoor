@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Elnoor-النور</string>
+    <string name="loading">Loading...</string>
+    <string name="error_no_network">No network connection</string>
+    <string name="error_load_failed">Failed to load page</string>
+    <string name="retry">Retry</string>
+    <string name="printer_ready">Printer Ready</string>
+    <string name="printer_not_available">Printer not available</string>
+    <string name="scanner_ready">Scanner Ready</string>
+    <string name="scanner_not_available">Scanner not available</string>
+    <string name="sdk_connected">POS Hardware Connected</string>
+    <string name="sdk_disconnected">POS Hardware Disconnected</string>
+</resources>

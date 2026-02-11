@@ -1,0 +1,289 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PEL-{YYYY}-{MM}-{####}",
+ "creation": "2026-01-30 10:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_main",
+  "company",
+  "loan_type",
+  "employee",
+  "employee_name",
+  "fixed_salary",
+  "posting_date",
+  "column_break_main",
+  "mode_of_payment",
+  "payment_account",
+  "amount",
+  "section_break_long_term",
+  "repayment_months",
+  "first_repayment_date",
+  "installment_amount",
+  "column_break_long_term",
+  "total_paid",
+  "outstanding_amount",
+  "section_break_schedule",
+  "repayment_schedule",
+  "section_break_details",
+  "remarks",
+  "amended_from",
+  "section_break_accounting",
+  "journal_entry",
+  "deducted",
+  "fully_paid"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_main",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Short Term",
+   "description": "\u0633\u0644\u0641\u0629 \u0642\u0635\u064a\u0631\u0629 \u0627\u0644\u0623\u062c\u0644: \u062a\u062e\u0635\u0645 \u0645\u0646 \u0627\u0644\u0645\u0631\u062a\u0628 \u0627\u0644\u0642\u0627\u062f\u0645 \u0643\u0627\u0645\u0644\u0629. \u0633\u0644\u0641\u0629 \u0637\u0648\u064a\u0644\u0629 \u0627\u0644\u0623\u062c\u0644: \u062a\u062e\u0635\u0645 \u0639\u0644\u0649 \u0623\u0642\u0633\u0627\u0637 \u0634\u0647\u0631\u064a\u0629",
+   "fieldname": "loan_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0633\u0644\u0641\u0629",
+   "options": "Short Term\nLong Term",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0645\u0648\u0638\u0641",
+   "options": "POS Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0648\u0638\u0641",
+   "read_only": 1
+  },
+  {
+   "description": "\u064a\u0633\u062a\u062e\u062f\u0645 \u0644\u0644\u062a\u062d\u0642\u0642 \u0645\u0646 \u0623\u0646 \u0627\u0644\u0633\u0644\u0641\u0629 \u0627\u0644\u0642\u0635\u064a\u0631\u0629 \u0644\u0627 \u062a\u062a\u062c\u0627\u0648\u0632 \u0627\u0644\u0645\u0631\u062a\u0628",
+   "fetch_from": "employee.fixed_salary",
+   "fieldname": "fixed_salary",
+   "fieldtype": "Currency",
+   "label": "\u0627\u0644\u0645\u0631\u062a\u0628 \u0627\u0644\u062b\u0627\u0628\u062a",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0631\u062d\u064a\u0644",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_main",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mode_of_payment",
+   "fieldtype": "Link",
+   "label": "\u0637\u0631\u064a\u0642\u0629 \u0627\u0644\u062f\u0641\u0639",
+   "options": "Mode of Payment",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_account",
+   "fieldtype": "Link",
+   "label": "\u062d\u0633\u0627\u0628 \u0627\u0644\u062f\u0641\u0639",
+   "options": "Account",
+   "read_only": 1
+  },
+  {
+   "description": "\u0645\u0628\u0644\u063a \u0627\u0644\u0633\u0644\u0641\u0629",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0645\u0628\u0644\u063a",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.loan_type == 'Long Term'",
+   "fieldname": "section_break_long_term",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0641\u0627\u0635\u064a\u0644 \u0627\u0644\u0633\u0644\u0641\u0629 \u0637\u0648\u064a\u0644\u0629 \u0627\u0644\u0623\u062c\u0644"
+  },
+  {
+   "depends_on": "eval:doc.loan_type == 'Long Term'",
+   "description": "\u0639\u062f\u062f \u0627\u0644\u0623\u0634\u0647\u0631 \u0644\u062a\u0642\u0633\u064a\u0637 \u0627\u0644\u0633\u0644\u0641\u0629",
+   "fieldname": "repayment_months",
+   "fieldtype": "Int",
+   "label": "\u0639\u062f\u062f \u0623\u0634\u0647\u0631 \u0627\u0644\u0633\u062f\u0627\u062f",
+   "mandatory_depends_on": "eval:doc.loan_type == 'Long Term'",
+   "non_negative": 1
+  },
+  {
+   "depends_on": "eval:doc.loan_type == 'Long Term'",
+   "description": "\u062a\u0627\u0631\u064a\u062e \u0627\u0633\u062a\u062d\u0642\u0627\u0642 \u0623\u0648\u0644 \u0642\u0633\u0637 \u0645\u0646 \u0627\u0644\u0633\u0644\u0641\u0629",
+   "fieldname": "first_repayment_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0623\u0648\u0644 \u0642\u0633\u0637",
+   "mandatory_depends_on": "eval:doc.loan_type == 'Long Term'"
+  },
+  {
+   "depends_on": "eval:doc.loan_type == 'Long Term'",
+   "description": "\u064a\u062a\u0645 \u062d\u0633\u0627\u0628\u0647\u0627 \u062a\u0644\u0642\u0627\u0626\u064a\u0627\u064b",
+   "fieldname": "installment_amount",
+   "fieldtype": "Currency",
+   "label": "\u0642\u064a\u0645\u0629 \u0627\u0644\u0642\u0633\u0637 \u0627\u0644\u0634\u0647\u0631\u064a",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_long_term",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.loan_type == 'Long Term'",
+   "fieldname": "total_paid",
+   "fieldtype": "Currency",
+   "label": "\u0625\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u0645\u0633\u062f\u062f",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.loan_type == 'Long Term'",
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "\u0627\u0644\u0645\u0628\u0644\u063a \u0627\u0644\u0645\u062a\u0628\u0642\u064a",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.loan_type == 'Long Term'",
+   "fieldname": "section_break_schedule",
+   "fieldtype": "Section Break",
+   "label": "\u062c\u062f\u0648\u0644 \u0627\u0644\u0633\u062f\u0627\u062f"
+  },
+  {
+   "depends_on": "eval:doc.loan_type == 'Long Term'",
+   "fieldname": "repayment_schedule",
+   "fieldtype": "Table",
+   "label": "\u062c\u062f\u0648\u0644 \u0623\u0642\u0633\u0627\u0637 \u0627\u0644\u0633\u062f\u0627\u062f",
+   "options": "POS Employee Loan Schedule",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_details",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u062a\u0641\u0627\u0635\u064a\u0644"
+  },
+  {
+   "description": "\u0633\u0628\u0628 \u0627\u0644\u0633\u0644\u0641\u0629 \u0623\u0648 \u0623\u064a \u0645\u0644\u0627\u062d\u0638\u0627\u062a \u0625\u0636\u0627\u0641\u064a\u0629",
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "\u0645\u0639\u062f\u0644 \u0645\u0646",
+   "no_copy": 1,
+   "options": "POS Employee Loan",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_accounting",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u062d\u0633\u0627\u0628\u0627\u062a"
+  },
+  {
+   "fieldname": "journal_entry",
+   "fieldtype": "Link",
+   "label": "\u0642\u064a\u062f \u0627\u0644\u064a\u0648\u0645\u064a\u0629",
+   "options": "Journal Entry",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.loan_type == 'Short Term'",
+   "description": "\u0644\u0644\u0633\u0644\u0641\u0629 \u0627\u0644\u0642\u0635\u064a\u0631\u0629: \u064a\u062a\u0645 \u0627\u0644\u062a\u062d\u062f\u064a\u062f \u0639\u0646\u062f \u062e\u0635\u0645\u0647\u0627 \u0628\u0627\u0644\u0643\u0627\u0645\u0644",
+   "fieldname": "deducted",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u062a\u0645 \u0627\u0644\u062e\u0635\u0645 \u0645\u0646 \u0627\u0644\u0645\u0631\u062a\u0628",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.loan_type == 'Long Term'",
+   "description": "\u064a\u062a\u0645 \u0627\u0644\u062a\u062d\u062f\u064a\u062f \u062a\u0644\u0642\u0627\u0626\u064a\u0627\u064b \u0639\u0646\u062f \u0633\u062f\u0627\u062f \u062c\u0645\u064a\u0639 \u0627\u0644\u0623\u0642\u0633\u0627\u0637",
+   "fieldname": "fully_paid",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u062a\u0645 \u0627\u0644\u0633\u062f\u0627\u062f \u0628\u0627\u0644\u0643\u0627\u0645\u0644",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-02-11 12:37:28.976709",
+ "modified_by": "Administrator",
+ "module": "Mobile Pos",
+ "name": "POS Employee Loan",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "employee,employee_name,loan_type",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "employee_name",
+ "track_changes": 1
+}

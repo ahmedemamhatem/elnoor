@@ -1,0 +1,21 @@
+{
+  "name": "Elnoor-النور POS",
+  "short_name": "Elnoor",
+  "start_url": "/app/mini-pos",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#0ea5e9",
+  "description": "نظام نقاط البيع النور",
+  "icons": [
+    {
+      "src": "/assets/mobile_pos/icons/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/mobile_pos/icons/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

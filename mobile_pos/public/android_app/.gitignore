@@ -1,0 +1,23 @@
+# Gradle
+.gradle/
+build/
+app/build/
+
+# Android Studio
+.idea/
+*.iml
+local.properties
+
+# Keystore (security - don't commit)
+*.keystore
+*.jks
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated files
+app/src/main/java/com/mobilepos/app/R.java

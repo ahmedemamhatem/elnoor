@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.sunyard.sdkserviceinvokedemo",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 1,
+      "versionName": "1.14",
+      "outputFile": "SdkInvokeDemo_v1.14_202510241552.apk"
+    }
+  ],
+  "elementType": "File"
+}

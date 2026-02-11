@@ -1,0 +1,243 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"hdr_shareholders\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>الشركاء</b></span>\",\"col\":12}},{\"id\":\"sc_shareholder\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"الشركاء\",\"col\":3}},{\"id\":\"sc_share_ledger\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"سجل الشراكة\",\"col\":3}},{\"id\":\"hdr_settlements\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>التسويات والمدفوعات</b></span>\",\"col\":12}},{\"id\":\"sc_shareholder_settlement\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"تسوية الشركاء\",\"col\":3}},{\"id\":\"sc_general_expense_allocation\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"توزيع المصروفات العامة\",\"col\":3}},{\"id\":\"sc_journal_entry\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"قيود اليومية\",\"col\":3}},{\"id\":\"hdr_pos\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>نقاط البيع</b></span>\",\"col\":12}},{\"id\":\"sc_mini_pos_profile\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ملفات نقاط البيع\",\"col\":3}},{\"id\":\"sc_expense_entry\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"قيود المصروفات\",\"col\":3}},{\"id\":\"sc_expense\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"أنواع المصروفات\",\"col\":3}},{\"id\":\"hdr_reports\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>التقارير</b></span>\",\"col\":12}},{\"id\":\"sc_share_ledger_report\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"تقرير سجل الشراكة\",\"col\":3}},{\"id\":\"sc_general_ledger\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"الأستاذ العام\",\"col\":3}}]",
+ "creation": "2025-12-08 00:00:00",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "users",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "الشراكة",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "الشركاء",
+   "link_count": 0,
+   "link_to": "Shareholder",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "سجل الشراكة",
+   "link_count": 0,
+   "link_to": "Share Ledger",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "تسوية الشركاء",
+   "link_count": 0,
+   "link_to": "Shareholder Settlement",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "توزيع المصروفات العامة",
+   "link_count": 0,
+   "link_to": "General Expense Allocation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "قيود اليومية",
+   "link_count": 0,
+   "link_to": "Journal Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "ملفات نقاط البيع",
+   "link_count": 0,
+   "link_to": "Mini POS Profile",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "قيود المصروفات",
+   "link_count": 0,
+   "link_to": "Expense Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "أنواع المصروفات",
+   "link_count": 0,
+   "link_to": "Expense",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "تقرير سجل الشراكة",
+   "link_count": 0,
+   "link_to": "Share Ledger Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "الأستاذ العام",
+   "link_count": 0,
+   "link_to": "General Ledger",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "فواتير المبيعات",
+   "link_count": 0,
+   "link_to": "Sales Invoice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "شجرة الحسابات",
+   "link_count": 0,
+   "link_to": "Account",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2025-12-08 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Mobile Pos",
+ "name": "الشراكة",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 26.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "الشركاء",
+   "link_to": "Shareholder",
+   "restrict_to_domain": "",
+   "stats_filter": "",
+   "type": "DocType"
+  },
+  {
+   "color": "Purple",
+   "doc_view": "List",
+   "label": "سجل الشراكة",
+   "link_to": "Share Ledger",
+   "restrict_to_domain": "",
+   "stats_filter": "",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "تسوية الشركاء",
+   "link_to": "Shareholder Settlement",
+   "restrict_to_domain": "",
+   "stats_filter": "",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "توزيع المصروفات العامة",
+   "link_to": "General Expense Allocation",
+   "restrict_to_domain": "",
+   "stats_filter": "",
+   "type": "DocType"
+  },
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "label": "قيود اليومية",
+   "link_to": "Journal Entry",
+   "restrict_to_domain": "",
+   "stats_filter": "",
+   "type": "DocType"
+  },
+  {
+   "color": "Cyan",
+   "doc_view": "List",
+   "label": "ملفات نقاط البيع",
+   "link_to": "Mini POS Profile",
+   "restrict_to_domain": "",
+   "stats_filter": "",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "label": "قيود المصروفات",
+   "link_to": "Expense Entry",
+   "restrict_to_domain": "",
+   "stats_filter": "",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "أنواع المصروفات",
+   "link_to": "Expense",
+   "restrict_to_domain": "",
+   "stats_filter": "",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "تقرير سجل الشراكة",
+   "link_to": "Share Ledger Report",
+   "report_ref_doctype": "Share Ledger",
+   "restrict_to_domain": "",
+   "stats_filter": "",
+   "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "",
+   "label": "الأستاذ العام",
+   "link_to": "General Ledger",
+   "report_ref_doctype": "GL Entry",
+   "restrict_to_domain": "",
+   "stats_filter": "",
+   "type": "Report"
+  }
+ ],
+ "title": "الشراكة"
+}

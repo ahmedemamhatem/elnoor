@@ -1,0 +1,216 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2025-12-08 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "company",
+  "posting_date",
+  "column_break_1",
+  "from_date",
+  "to_date",
+  "section_break_expenses",
+  "expense_entries_html",
+  "total_general_expenses",
+  "section_break_sales",
+  "total_sales_amount",
+  "section_break_allocation",
+  "allocation_items",
+  "section_break_summary",
+  "total_allocated",
+  "allocation_difference",
+  "column_break_summary",
+  "status",
+  "section_break_remarks",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "GEA-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company / الشركة",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date / تاريخ الترحيل",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "From Date / من تاريخ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "To Date / إلى تاريخ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_expenses",
+   "fieldtype": "Section Break",
+   "label": "General Expenses / المصروفات العامة"
+  },
+  {
+   "fieldname": "expense_entries_html",
+   "fieldtype": "HTML",
+   "label": "Expense Entries"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_general_expenses",
+   "fieldtype": "Currency",
+   "label": "Total General Expenses / إجمالي المصروفات العامة",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_sales",
+   "fieldtype": "Section Break",
+   "label": "Sales Summary / ملخص المبيعات"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_sales_amount",
+   "fieldtype": "Currency",
+   "label": "Total Sales Amount / إجمالي المبيعات",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_allocation",
+   "fieldtype": "Section Break",
+   "label": "Allocation / التوزيع"
+  },
+  {
+   "fieldname": "allocation_items",
+   "fieldtype": "Table",
+   "label": "Allocation Items",
+   "options": "General Expense Allocation Item"
+  },
+  {
+   "fieldname": "section_break_summary",
+   "fieldtype": "Section Break",
+   "label": "Summary / الملخص"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_allocated",
+   "fieldtype": "Currency",
+   "label": "Total Allocated / إجمالي الموزع",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "description": "Difference due to rounding",
+   "fieldname": "allocation_difference",
+   "fieldtype": "Currency",
+   "label": "Rounding Difference / فرق التقريب",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_summary",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status / الحالة",
+   "options": "Draft\nSubmitted\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_remarks",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks / ملاحظات"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "General Expense Allocation",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-12-08 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Mobile Pos",
+ "name": "General Expense Allocation",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "translated_doctype": 1
+}

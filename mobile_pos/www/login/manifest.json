@@ -1,0 +1,23 @@
+{
+  "name": "Elnoor-النور POS",
+  "short_name": "Elnoor",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/main",
+  "display": "standalone",
+  "background_color": "#f7fafc",
+  "theme_color": "#2563eb",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/assets/mobile_pos/icons/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/mobile_pos/icons/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

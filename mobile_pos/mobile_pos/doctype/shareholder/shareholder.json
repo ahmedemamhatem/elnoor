@@ -1,0 +1,227 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:shareholder_name",
+ "creation": "2025-12-07 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_basic",
+  "shareholder_name",
+  "shareholder_name_en",
+  "column_break_basic",
+  "mobile_no",
+  "email",
+  "section_accounting",
+  "payable_account",
+  "default_percentage",
+  "column_break_accounting",
+  "company",
+  "section_pos_profiles",
+  "pos_profiles_html",
+  "section_status",
+  "is_active",
+  "column_break_status",
+  "total_share_amount",
+  "total_settled_amount",
+  "total_pending_amount",
+  "advance_balance",
+  "section_notes",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_basic",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  },
+  {
+   "fieldname": "shareholder_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Shareholder Name",
+   "reqd": 1,
+   "translatable": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "shareholder_name_en",
+   "fieldtype": "Data",
+   "label": "Shareholder Name (English)",
+   "translatable": 1
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Mobile No",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "section_accounting",
+   "fieldtype": "Section Break",
+   "label": "Accounting"
+  },
+  {
+   "fieldname": "payable_account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Payable Account",
+   "options": "Account",
+   "read_only": 1,
+   "description": "Auto-created from Parent Shareholder Payable Account in settings"
+  },
+  {
+   "default": "0",
+   "description": "Default percentage when adding to a POS Profile",
+   "fieldname": "default_percentage",
+   "fieldtype": "Percent",
+   "label": "Default Percentage"
+  },
+  {
+   "fieldname": "column_break_accounting",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_pos_profiles",
+   "fieldtype": "Section Break",
+   "label": "POS Profiles"
+  },
+  {
+   "fieldname": "pos_profiles_html",
+   "fieldtype": "HTML",
+   "label": "POS Profiles"
+  },
+  {
+   "fieldname": "section_status",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "column_break_status",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_share_amount",
+   "fieldtype": "Currency",
+   "label": "Total Share Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_settled_amount",
+   "fieldtype": "Currency",
+   "label": "Total Settled Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_pending_amount",
+   "fieldtype": "Currency",
+   "label": "Total Pending Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "advance_balance",
+   "fieldtype": "Currency",
+   "label": "Advance Balance / المقدم",
+   "read_only": 1,
+   "description": "Balance from advance payments not yet allocated to settlements"
+  },
+  {
+   "fieldname": "section_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "image_field": "",
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Share Ledger",
+   "link_fieldname": "shareholder"
+  },
+  {
+   "link_doctype": "Shareholder Settlement",
+   "link_fieldname": "shareholder"
+  }
+ ],
+ "modified": "2025-12-07 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Mobile Pos",
+ "name": "Shareholder",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User"
+  }
+ ],
+ "quick_entry": 1,
+ "search_fields": "shareholder_name, mobile_no",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "shareholder_name",
+ "track_changes": 1,
+ "translated_doctype": 1
+}

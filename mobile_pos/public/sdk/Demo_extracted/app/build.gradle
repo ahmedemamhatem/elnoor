@@ -1,0 +1,60 @@
+    plugins {
+        id 'com.android.application'
+    }
+
+android {
+    namespace 'com.sunyard.sdkserviceinvokedemo'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.sunyard.sdkserviceinvokedemo"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.14"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "SdkInvokeDemo_v${defaultConfig.versionName}_${buildTime()}.apk"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures{
+        viewBinding = true
+        dataBinding = true
+    }
+}
+
+static def buildTime() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmm')
+    return formattedDate
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+    //implementation files('libs/sunyardapi_v1.6.15_202507101641.jar')
+    implementation files('libs/sunyardapi_v1.6.19_202509021514.jar')
+
+}

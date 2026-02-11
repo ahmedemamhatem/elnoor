@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GuestDisplayActivity">
+
+    <Button
+        android:id="@+id/show_image_on_guestdisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show_image_on_guestdisplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/select_videoPath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show_video_on_guestdisplay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/show_image_on_guestdisplay"
+        android:layout_marginTop="50dp"
+        android:visibility="visible"/>
+
+
+    <Button
+        android:id="@+id/show_text_on_guestdisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show_text_on_guestdisplay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/select_videoPath"
+        android:layout_marginTop="50dp"
+        />
+
+
+    <Button
+        android:id="@+id/show_scrollingText_on_guestdisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show_scrollingText_on_guestdisplay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/show_text_on_guestdisplay"
+        android:layout_marginTop="50dp"
+        />
+
+    <Button
+        android:id="@+id/show_fadeImage_on_guestdisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show_fadeImage_on_guestdisplay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/show_scrollingText_on_guestdisplay"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/select_picturePath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="select_picturePath"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/show_fadeImage_on_guestdisplay"
+        android:layout_marginTop="50dp"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/set_DefaultLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="set_DefaultLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/select_picturePath"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/turn_off_guestdisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="turn_off_guestdisplay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/set_DefaultLogo"
+        android:layout_marginTop="50dp"
+        android:visibility="visible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

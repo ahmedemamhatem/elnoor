@@ -1,0 +1,246 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PEMP-{####}",
+ "creation": "2026-01-30 10:00:00",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_info_section",
+  "company",
+  "employee_name",
+  "date_of_joining",
+  "column_break_basic",
+  "employee_type",
+  "gender",
+  "date_of_birth",
+  "status",
+  "exit_date",
+  "contact_section",
+  "mobile_number",
+  "email",
+  "column_break_contact",
+  "address",
+  "identification_section",
+  "id_number",
+  "column_break_id",
+  "id_type",
+  "salary_section",
+  "fixed_salary",
+  "allowed_leave_days",
+  "cost_center",
+  "additional_salaries_section",
+  "additional_salaries",
+  "notes_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_info_section",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0648\u0638\u0641",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u064a\u064a\u0646"
+  },
+  {
+   "fieldname": "column_break_basic",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employee_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0648\u0638\u0641",
+   "options": "POS Employee Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "\u0627\u0644\u0646\u0648\u0639",
+   "options": "\nMale\nFemale"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0645\u064a\u0644\u0627\u062f"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u062d\u0627\u0644\u0629",
+   "options": "Active\nInactive\nLeft"
+  },
+  {
+   "depends_on": "eval:doc.status == 'Left'",
+   "fieldname": "exit_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0627\u0633\u062a\u0642\u0627\u0644\u0629",
+   "mandatory_depends_on": "eval:doc.status == 'Left'"
+  },
+  {
+   "fieldname": "contact_section",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0627\u062a\u0635\u0627\u0644"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u0628\u0627\u064a\u0644",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_contact",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "\u0627\u0644\u0639\u0646\u0648\u0627\u0646"
+  },
+  {
+   "fieldname": "identification_section",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u062a\u0639\u0631\u064a\u0641"
+  },
+  {
+   "fieldname": "id_number",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0628\u0637\u0627\u0642\u0629"
+  },
+  {
+   "fieldname": "column_break_id",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "id_type",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0628\u0637\u0627\u0642\u0629",
+   "options": "\nNational ID\nPassport\nDriving License\nOther"
+  },
+  {
+   "fieldname": "salary_section",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0631\u062a\u0628"
+  },
+  {
+   "fieldname": "fixed_salary",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0645\u0631\u062a\u0628 \u0627\u0644\u062b\u0627\u0628\u062a",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "allowed_leave_days",
+   "fieldtype": "Int",
+   "label": "\u0623\u064a\u0627\u0645 \u0627\u0644\u0625\u062c\u0627\u0632\u0629 \u0627\u0644\u0645\u0633\u0645\u0648\u062d\u0629",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "\u0645\u0631\u0643\u0632 \u0627\u0644\u062a\u0643\u0644\u0641\u0629",
+   "link_filters": "[[\"Cost Center\", \"disabled\", \"=\", 0], [\"Cost Center\", \"is_group\", \"=\", 0]]",
+   "options": "Cost Center"
+  },
+  {
+   "fieldname": "additional_salaries_section",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0628\u062f\u0644\u0627\u062a \u0648\u0627\u0644\u0627\u0633\u062a\u0642\u0637\u0627\u0639\u0627\u062a \u0627\u0644\u0625\u0636\u0627\u0641\u064a\u0629"
+  },
+  {
+   "fieldname": "additional_salaries",
+   "fieldtype": "Table",
+   "label": "\u0627\u0644\u0628\u062f\u0644\u0627\u062a \u0627\u0644\u0625\u0636\u0627\u0641\u064a\u0629",
+   "options": "POS Additional Salary Table"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-11 12:41:09.960982",
+ "modified_by": "Administrator",
+ "module": "Mobile Pos",
+ "name": "POS Employee",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "employee_name,employee_type,mobile_number",
+ "show_name_in_global_search": 1,
+ "show_preview_popup": 1,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "employee_name",
+ "track_changes": 1
+}

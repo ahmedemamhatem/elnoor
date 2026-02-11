@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ============================================== -->
+    <!-- CONFIGURATION - Edit these values as needed    -->
+    <!-- ============================================== -->
+
+    <!-- POS Server URL - Production server (main website) -->
+    <string name="pos_url">https://elnoors.com</string>
+
+    <!-- Company name shown on receipts -->
+    <string name="company_name">Elnoor</string>
+
+    <!-- Auto-start app on device boot (true/false) -->
+    <bool name="auto_start_on_boot">true</bool>
+
+    <!-- Enable hardware scanner button (F1 key) -->
+    <bool name="enable_hardware_scan_button">true</bool>
+
+    <!-- Print settings -->
+    <integer name="print_gray_level">8</integer>
+    <integer name="print_feed_lines">4</integer>
+
+    <!-- Scanner timeout in milliseconds (30 seconds default) -->
+    <integer name="scanner_timeout">30000</integer>
+</resources>

@@ -1,0 +1,170 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:PESL-{YYYY}-{MM}-{####}",
+ "creation": "2026-01-30 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_main",
+  "company",
+  "employee",
+  "employee_name",
+  "posting_date",
+  "due_date",
+  "column_break_main",
+  "amount",
+  "sales_invoice",
+  "status",
+  "section_break_details",
+  "remarks",
+  "section_break_payout",
+  "deducted",
+  "journal_entry",
+  "salary_payout"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_main",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0645\u0648\u0638\u0641",
+   "options": "POS Employee",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0648\u0638\u0641",
+   "read_only": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0641\u0627\u062a\u0648\u0631\u0629",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "description": "\u062a\u0627\u0631\u064a\u062e \u0627\u0633\u062a\u062d\u0642\u0627\u0642 \u0627\u0644\u062e\u0635\u0645 \u0645\u0646 \u0627\u0644\u0645\u0631\u062a\u0628",
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0627\u0633\u062a\u062d\u0642\u0627\u0642",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_main",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0645\u0628\u0644\u063a",
+   "non_negative": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "\u0641\u0627\u062a\u0648\u0631\u0629 \u0627\u0644\u0645\u0628\u064a\u0639\u0627\u062a",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u062d\u0627\u0644\u0629",
+   "options": "Pending\nDeducted\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_details",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u062a\u0641\u0627\u0635\u064a\u0644"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_payout",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u062e\u0635\u0645"
+  },
+  {
+   "default": "0",
+   "fieldname": "deducted",
+   "fieldtype": "Check",
+   "label": "\u062a\u0645 \u0627\u0644\u062e\u0635\u0645",
+   "read_only": 1
+  },
+  {
+   "fieldname": "journal_entry",
+   "fieldtype": "Link",
+   "label": "\u0642\u064a\u062f \u0627\u0644\u064a\u0648\u0645\u064a\u0629",
+   "options": "Journal Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "salary_payout",
+   "fieldtype": "Data",
+   "label": "\u0643\u0634\u0641 \u0627\u0644\u0645\u0631\u062a\u0628\u0627\u062a",
+   "read_only": 1
+  }
+ ],
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-07 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Mobile Pos",
+ "name": "POS Employee Sales Ledger",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1
+  }
+ ],
+ "search_fields": "employee,employee_name,sales_invoice",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "employee_name",
+ "track_changes": 1
+}

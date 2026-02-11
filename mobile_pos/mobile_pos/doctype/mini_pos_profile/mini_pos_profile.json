@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:user",
+ "creation": "2025-07-27 09:18:28.863246",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "full_name",
+  "company",
+  "sales_taxes",
+  "column_break_ctrc",
+  "disabled",
+  "warehouse",
+  "mini_pos_mode_of_payment",
+  "section_break_bohs",
+  "allow_to_add_customer",
+  "allow_to_edit_item_price",
+  "section_break_shareholders",
+  "enable_profit_sharing",
+  "shareholders"
+ ],
+ "fields": [
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fetch_from": "user.full_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Full name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ctrc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_taxes",
+   "fieldtype": "Link",
+   "label": "Sales Taxes",
+   "options": "Sales Taxes and Charges Template"
+  },
+  {
+   "fieldname": "mini_pos_mode_of_payment",
+   "fieldtype": "Table",
+   "label": "Mini POS Mode of Payment",
+   "options": "Mini POS Mode of Payment"
+  },
+  {
+   "fieldname": "section_break_bohs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_to_add_customer",
+   "fieldtype": "Check",
+   "label": "Allow to Add Customer"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_to_edit_item_price",
+   "fieldtype": "Check",
+   "label": "Allow to Edit Item Price"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Dsabled"
+  },
+  {
+   "fieldname": "section_break_shareholders",
+   "fieldtype": "Section Break",
+   "label": "Shareholders / \u0627\u0644\u0634\u0631\u0643\u0627\u0621"
+  },
+  {
+   "default": "0",
+   "description": "Enable profit sharing for shareholders based on (Sales - Returns - Expenses)",
+   "fieldname": "enable_profit_sharing",
+   "fieldtype": "Check",
+   "label": "Enable Profit Sharing"
+  },
+  {
+   "depends_on": "eval:doc.enable_profit_sharing",
+   "fieldname": "shareholders",
+   "fieldtype": "Table",
+   "label": "Shareholders",
+   "options": "Mini POS Shareholder"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "group": "Transactions",
+   "link_doctype": "Customer",
+   "link_fieldname": "custom_mini_pos_profile"
+  },
+  {
+   "group": "Transactions",
+   "link_doctype": "Sales Invoice",
+   "link_fieldname": "custom_mini_pos_profile"
+  },
+  {
+   "group": "Transactions",
+   "link_doctype": "Payment Entry",
+   "link_fieldname": "custom_mini_pos_profile"
+  },
+  {
+   "group": "Profit Sharing",
+   "link_doctype": "Share Ledger",
+   "link_fieldname": "mini_pos_profile"
+  },
+  {
+   "group": "Profit Sharing",
+   "link_doctype": "Shareholder Settlement",
+   "link_fieldname": "mini_pos_profile"
+  }
+ ],
+ "modified": "2025-12-08 08:15:33.791851",
+ "modified_by": "Administrator",
+ "module": "Mobile Pos",
+ "name": "Mini POS Profile",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "full_name",
+ "show_name_in_global_search": 1,
+ "show_preview_popup": 1,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name",
+ "track_changes": 1,
+ "translated_doctype": 1
+}

@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "creation": "2025-12-07 00:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "share_ledger",
+  "posting_date",
+  "mini_pos_profile",
+  "column_break_1",
+  "transaction_type",
+  "voucher_type",
+  "voucher_no",
+  "column_break_2",
+  "net_amount",
+  "percentage",
+  "share_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "share_ledger",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Share Ledger",
+   "read_only": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mini_pos_profile",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "POS Profile",
+   "options": "Mini POS Profile",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transaction_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "voucher_type",
+   "fieldtype": "Link",
+   "label": "Voucher Type",
+   "options": "DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "voucher_no",
+   "fieldtype": "Dynamic Link",
+   "label": "Voucher No",
+   "options": "voucher_type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "net_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Net Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "percentage",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Percentage",
+   "read_only": 1
+  },
+  {
+   "fieldname": "share_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Share Amount",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-12-08 08:30:15.084578",
+ "modified_by": "Administrator",
+ "module": "Mobile Pos",
+ "name": "Shareholder Settlement Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

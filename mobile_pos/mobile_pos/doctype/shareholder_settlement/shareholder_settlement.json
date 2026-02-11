@@ -1,0 +1,277 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2025-12-07 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "shareholder",
+  "shareholder_name",
+  "company",
+  "column_break_1",
+  "from_date",
+  "to_date",
+  "posting_date",
+  "section_break_filters",
+  "mini_pos_profile",
+  "section_break_summary",
+  "total_revenue",
+  "total_expenses",
+  "column_break_summary_2",
+  "net_profit",
+  "percentage",
+  "share_amount",
+  "section_break_ledger",
+  "share_ledger_entries",
+  "section_break_accounting",
+  "accrual_journal_entry",
+  "payment_journal_entry",
+  "column_break_accounting",
+  "status",
+  "advance_used",
+  "section_break_remarks",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "SS-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shareholder",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Shareholder / الشريك",
+   "options": "Shareholder",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "shareholder.shareholder_name",
+   "fieldname": "shareholder_name",
+   "fieldtype": "Data",
+   "label": "Shareholder Name / اسم الشريك",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "shareholder.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company / الشركة",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "From Date / من تاريخ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "To Date / إلى تاريخ",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date / تاريخ الترحيل",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_filters",
+   "fieldtype": "Section Break",
+   "label": "Filters / فلاتر"
+  },
+  {
+   "description": "Leave empty to include all POS Profiles",
+   "fieldname": "mini_pos_profile",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Mini POS Profile / ملف نقطة البيع",
+   "options": "Mini POS Profile"
+  },
+  {
+   "fieldname": "section_break_summary",
+   "fieldtype": "Section Break",
+   "label": "Summary / الملخص"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_revenue",
+   "fieldtype": "Currency",
+   "label": "Total Revenue / إجمالي الإيرادات",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_expenses",
+   "fieldtype": "Currency",
+   "label": "Total Expenses / إجمالي المصروفات",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_summary_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "net_profit",
+   "fieldtype": "Currency",
+   "label": "Net Profit / صافي الربح",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "percentage",
+   "fieldtype": "Percent",
+   "label": "Percentage / النسبة",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "share_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Share Amount / مبلغ الحصة",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ledger",
+   "fieldtype": "Section Break",
+   "label": "Share Ledger Entries / قيود سجل الشراكة"
+  },
+  {
+   "fieldname": "share_ledger_entries",
+   "fieldtype": "Table",
+   "label": "Entries",
+   "options": "Shareholder Settlement Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_accounting",
+   "fieldtype": "Section Break",
+   "label": "Accounting / المحاسبة"
+  },
+  {
+   "fieldname": "accrual_journal_entry",
+   "fieldtype": "Link",
+   "label": "Accrual Journal Entry / قيد الاستحقاق",
+   "options": "Journal Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_journal_entry",
+   "fieldtype": "Link",
+   "label": "Payment Journal Entry / قيد الدفع",
+   "options": "Journal Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_accounting",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status / الحالة",
+   "options": "Draft\nSubmitted\nPaid\nCancelled",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "advance_used",
+   "fieldtype": "Currency",
+   "label": "Advance Used / المقدم المستخدم",
+   "read_only": 1,
+   "description": "Amount deducted from shareholder's advance balance"
+  },
+  {
+   "fieldname": "section_break_remarks",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks / ملاحظات"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Shareholder Settlement",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-12-08 09:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Mobile Pos",
+ "name": "Shareholder Settlement",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "submit": 1,
+   "cancel": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "translated_doctype": 1
+}

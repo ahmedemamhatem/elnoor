@@ -1,0 +1,219 @@
+{
+ "actions": [],
+ "autoname": "field:company",
+ "creation": "2025-11-27 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company_section",
+  "company",
+  "column_break_company",
+  "enabled",
+  "warehouse_settings_section",
+  "main_warehouse",
+  "column_break_warehouse",
+  "allow_negative_stock",
+  "pricing_section",
+  "selling_price_list",
+  "expense_settings_section",
+  "default_parent_account_for_expense",
+  "discount_settings_section",
+  "default_parent_account_for_discount",
+  "column_break_discount",
+  "invoice_discount_account",
+  "profit_sharing_section",
+  "parent_shareholder_payable_account",
+  "auto_create_shareholder_account",
+  "column_break_profit_sharing",
+  "profit_sharing_expense_account",
+  "employee_settings_section",
+  "employee_purchases_account",
+  "column_break_employee",
+  "employee_salary_account",
+  "employee_long_term_loan_account"
+ ],
+ "fields": [
+  {
+   "fieldname": "company_section",
+   "fieldtype": "Section Break",
+   "label": "Company / الشركة"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company / الشركة",
+   "options": "Company",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_company",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Enabled / مفعل"
+  },
+  {
+   "fieldname": "warehouse_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Warehouse Settings / إعدادات المخزن"
+  },
+  {
+   "fieldname": "main_warehouse",
+   "fieldtype": "Link",
+   "label": "Main Warehouse / المخزن الرئيسي",
+   "options": "Warehouse",
+   "description": "Main warehouse to transfer stock from when loading orders"
+  },
+  {
+   "fieldname": "column_break_warehouse",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_negative_stock",
+   "fieldtype": "Check",
+   "label": "Allow Negative Stock / السماح بالرصيد السالب",
+   "description": "If enabled, all items will be available with qty 0 and all transactions will be allowed"
+  },
+  {
+   "fieldname": "pricing_section",
+   "fieldtype": "Section Break",
+   "label": "Pricing Settings / إعدادات التسعير"
+  },
+  {
+   "fieldname": "selling_price_list",
+   "fieldtype": "Link",
+   "label": "Selling Price List / قائمة أسعار البيع",
+   "options": "Price List",
+   "description": "Default selling price list for this company. If not set, falls back to global Selling Settings"
+  },
+  {
+   "fieldname": "expense_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Expense Settings / إعدادات المصروفات"
+  },
+  {
+   "fieldname": "default_parent_account_for_expense",
+   "fieldtype": "Link",
+   "label": "Default Parent Account for Expense / الحساب الرئيسي للمصروفات",
+   "options": "Account",
+   "description": "Parent account under which expense accounts will be created"
+  },
+  {
+   "fieldname": "discount_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Discount Settings / إعدادات الخصم"
+  },
+  {
+   "fieldname": "default_parent_account_for_discount",
+   "fieldtype": "Link",
+   "label": "Default Parent Account for Discount / الحساب الرئيسي للخصم",
+   "options": "Account",
+   "description": "Parent account under which discount accounts will be created"
+  },
+  {
+   "fieldname": "column_break_discount",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "invoice_discount_account",
+   "fieldtype": "Link",
+   "label": "Invoice Discount Account / حساب خصم الفاتورة",
+   "options": "Account",
+   "description": "Account to use for invoice additional discount (is_cash_or_non_trade_discount)"
+  },
+  {
+   "fieldname": "profit_sharing_section",
+   "fieldtype": "Section Break",
+   "label": "Profit Sharing Settings / إعدادات توزيع الأرباح"
+  },
+  {
+   "fieldname": "parent_shareholder_payable_account",
+   "fieldtype": "Link",
+   "label": "Parent Shareholder Payable Account / حساب مستحقات الشركاء الرئيسي",
+   "options": "Account",
+   "reqd": 0,
+   "description": "Parent account under which shareholder payable accounts will be created automatically"
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_create_shareholder_account",
+   "fieldtype": "Check",
+   "label": "Auto Create Shareholder Account / إنشاء حساب الشريك تلقائياً",
+   "description": "If enabled, a payable account will be created automatically for each new shareholder under the parent account"
+  },
+  {
+   "fieldname": "column_break_profit_sharing",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "profit_sharing_expense_account",
+   "fieldtype": "Link",
+   "label": "Profit Sharing Expense Account / حساب مصروفات توزيع الأرباح",
+   "options": "Account",
+   "description": "Expense account to debit when creating shareholder settlement entries"
+  },
+  {
+   "fieldname": "employee_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Settings / \u0627\u0639\u062f\u0627\u062f\u0627\u062a \u0627\u0644\u0645\u0648\u0638\u0641\u064a\u0646"
+  },
+  {
+   "fieldname": "employee_purchases_account",
+   "fieldtype": "Link",
+   "label": "Employee Purchases Account / \u062d\u0633\u0627\u0628 \u0645\u0634\u062a\u0631\u064a\u0627\u062a \u0627\u0644\u0645\u0648\u0638\u0641\u064a\u0646",
+   "options": "Account",
+   "description": "Account for employee purchase invoices - will be debited when employee buys on credit"
+  },
+  {
+   "fieldname": "column_break_employee",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employee_salary_account",
+   "fieldtype": "Link",
+   "label": "Employee Salary Account / \u062d\u0633\u0627\u0628 \u0645\u0631\u062a\u0628\u0627\u062a \u0627\u0644\u0645\u0648\u0638\u0641\u064a\u0646",
+   "options": "Account",
+   "description": "Employee salary account - used for short term loans"
+  },
+  {
+   "fieldname": "employee_long_term_loan_account",
+   "fieldtype": "Link",
+   "label": "Employee Long Term Loan Account / \u062d\u0633\u0627\u0628 \u0633\u0644\u0641 \u0627\u0644\u0645\u0648\u0638\u0641\u064a\u0646 \u0637\u0648\u064a\u0644\u0629 \u0627\u0644\u0623\u062c\u0644",
+   "options": "Account",
+   "description": "Account for long term employee loans"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-29 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Mobile Pos",
+ "name": "Mobile POS Settings",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "company",
+ "track_changes": 1
+}

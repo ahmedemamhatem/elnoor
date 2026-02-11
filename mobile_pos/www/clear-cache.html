@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Cache</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: white;
+            color: #333;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 { color: #667eea; }
+        button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        .log {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .log div {
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧹 Clear All Caches</h1>
+        <p>This tool will clear all service workers and caches for this site.</p>
+        <p style="background: #fff3cd; color: #856404; padding: 10px; border-radius: 8px; margin: 10px 0;">
+            <strong>⚠️ Important:</strong> After clearing cache, use <strong>Ctrl + Shift + R</strong> (Windows/Linux) or <strong>Cmd + Shift + R</strong> (Mac) to hard refresh the page!
+        </p>
+
+        <button onclick="clearEverything()">🔥 Clear Everything Now</button>
+        <button onclick="goToOrder()">➡️ Go to Order Page</button>
+
+        <div class="log" id="log"></div>
+    </div>
+
+    <script>
+        function log(message, type = 'info') {
+            const logDiv = document.getElementById('log');
+            const entry = document.createElement('div');
+            entry.className = type;
+            entry.textContent = message;
+            logDiv.appendChild(entry);
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+
+        async function clearEverything() {
+            log('🚀 Starting cleanup process...', 'info');
+
+            try {
+                // Unregister all service workers
+                const registrations = await navigator.serviceWorker.getRegistrations();
+                log(`Found ${registrations.length} service worker(s)`, 'info');
+
+                for (let registration of registrations) {
+                    await registration.unregister();
+                    log('✅ Unregistered service worker: ' + registration.scope, 'success');
+                }
+
+                // Delete all caches
+                const cacheNames = await caches.keys();
+                log(`Found ${cacheNames.length} cache(s)`, 'info');
+
+                for (let cacheName of cacheNames) {
+                    await caches.delete(cacheName);
+                    log('✅ Deleted cache: ' + cacheName, 'success');
+                }
+
+                // Clear localStorage
+                localStorage.clear();
+                log('✅ Cleared localStorage', 'success');
+
+                // Clear sessionStorage
+                sessionStorage.clear();
+                log('✅ Cleared sessionStorage', 'success');
+
+                log('🎉 ALL DONE! Everything is cleared!', 'success');
+                log('👉 Now click "Go to Order Page" button', 'info');
+                log('🔄 Or the page will auto-redirect in 3 seconds...', 'info');
+
+                // Auto-redirect after 3 seconds
+                setTimeout(() => {
+                    goToOrder();
+                }, 3000);
+
+            } catch (error) {
+                log('❌ Error: ' + error.message, 'error');
+            }
+        }
+
+        function goToOrder() {
+            // Add timestamp to force fresh load
+            window.location.href = '/order?v=' + Date.now();
+        }
+
+        // Auto-run on page load
+        window.addEventListener('load', () => {
+            log('Page loaded. Click "Clear Everything Now" button.', 'info');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Background circle -->
+    <path
+        android:fillColor="#2563EB"
+        android:pathData="M54,54m-40,0a40,40 0,1 1,80 0a40,40 0,1 1,-80 0"/>
+
+    <!-- Shopping cart icon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M38,42h4l3,14h22l3,-14h4l-4,18H41L38,42z
+                          M45,60a3,3 0,1 1,0 6a3,3 0,1 1,0 -6z
+                          M63,60a3,3 0,1 1,0 6a3,3 0,1 1,0 -6z"/>
+
+    <!-- Receipt/printer lines -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M48,48h12v2H48z M48,52h8v2H48z"/>
+</vector>

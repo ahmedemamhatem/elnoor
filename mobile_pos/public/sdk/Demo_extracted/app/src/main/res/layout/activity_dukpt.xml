@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PedActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/teal_700"
+        android:gravity="center"
+        android:text="Dukpt Test"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_reset_ped"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/teal_200"
+        android:text="Reset Ped"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <Button
+        android:id="@+id/bt_write_mkey"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/teal_200"
+        android:text="Write Main Key"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_reset_ped"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/bt_get_kcv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/teal_200"
+        android:text="Get Kcv"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_write_mkey"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/bt_increase_ksn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/teal_200"
+        android:text="Increase Ksn"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_get_kcv"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/bt_get_ksn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/teal_200"
+        android:text="Get Ksn"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_increase_ksn"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/bt_cal_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/teal_200"
+        android:text="CalData"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_get_ksn"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/bt_cal_mac"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/teal_200"
+        android:text="CalMac"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_cal_data"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/bt_get_pin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/teal_200"
+        android:text="Input Pin"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_cal_mac"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/bt_write_aes_mkey"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/teal_200"
+        android:text="Write Aes Main Key"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_reset_ped"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/bt_aes_getkcv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/teal_200"
+        android:text="Aes getKcv"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_write_aes_mkey"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/bt_aes_increase_ksn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/teal_200"
+        android:text="Aes Increase Ksn"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_aes_getkcv"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/bt_get_aes_ksn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/teal_200"
+        android:text="Aes Get Ksn"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_aes_increase_ksn"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/bt_aes_cal_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/teal_200"
+        android:text="Aes CalData"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_get_aes_ksn"
+        app:layout_constraintWidth_percent="0.4" />
+
+
+    <Button
+        android:id="@+id/bt_aes_cal_mac"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/teal_200"
+        android:text="Aes CalMac"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_aes_cal_data"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/bt_get_aes_pin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/teal_200"
+        android:text="Aes Input Pin"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_aes_cal_mac"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/bt_load_dukpt_tr31"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/teal_200"
+        android:text="Load Tr31"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_get_pin"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/bt_get_dukpt_custom_pin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/teal_200"
+        android:text="Customize Input Pin"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_get_aes_pin"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_get_dukpt_custom_pin">
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_emv_process" />
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

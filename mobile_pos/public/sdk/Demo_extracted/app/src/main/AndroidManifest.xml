@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- android:sharedUserId="android.uid.system" -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" /> <!-- 修改音量 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- 读写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+    <queries>
+        <package android:name="com.sunyard.deviceservice" />
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SdkServiceInvokeDemo"
+        tools:targetApi="31">
+        <activity
+            android:name=".GuestDisplayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PsamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LedLightActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Sle44428CardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".M1CardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".APNActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SerialPortActivity"
+            android:exported="false" />
+        <!--
+<receiver
+            android:name=".service.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                &lt;!&ndash; <action android:name="android.intent.category.HOME"/> &ndash;&gt;
+            </intent-filter>
+        </receiver>
+        -->
+        <activity
+            android:name=".SystemUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PrintActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GeneralActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OthersActivity"
+            android:exported="false" />
+        <activity android:name=".DukptActivity" />
+        <activity android:name=".FingerActivity" />
+        <activity android:name=".CustomizePinActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

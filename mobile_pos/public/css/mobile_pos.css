@@ -1,0 +1,26 @@
+#mobile-pos-app {
+    padding: 15px;
+    font-size: 16px;
+}
+#mobile-pos-app label {
+    font-weight: 600;
+    font-size: 14px;
+}
+#mobile-pos-app .form-control {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 8px;
+}
+.btn-block {
+    width: 100%;
+}
+@media (max-width: 500px) {
+    #mobile-pos-app {
+        padding: 5px;
+    }
+}
+#pos-message .alert {
+    padding: 8px;
+    margin-top: 10px;
+}

@@ -394,6 +394,8 @@ frappe.pages['mini-pos'].on_page_load = async function(wrapper) {
             </head>
             <body>
                 <div class="print-header">
+                    <img src="/assets/mobile_pos/icons/web-app-manifest-192x192.png" alt="Elnoor-النور" style="width:60px;height:60px;border-radius:12px;margin-bottom:8px;">
+                    <div class="print-company">${typeof company_print_name !== 'undefined' ? company_print_name : 'Elnoor-النور'}</div>
                     <div class="print-title">${title || ''}</div>
                     <div class="print-company">${company || ''}</div>
                 </div>
@@ -998,6 +1000,10 @@ frappe.pages['mini-pos'].on_page_load = async function(wrapper) {
         </head>
         <body>
             <div class="header center">
+                <img src="/assets/mobile_pos/icons/web-app-manifest-192x192.png" alt="Elnoor-النور" style="width:60px;height:60px;border-radius:12px;margin-bottom:5px;">
+                <div class="bold" style="font-size: 14px;">${typeof company_print_name !== 'undefined' ? company_print_name : 'Elnoor-النور'}</div>
+                ${typeof company_phone !== 'undefined' && company_phone ? '<div style="font-size:11px;">' + company_phone + '</div>' : ''}
+                <div style="border-top:1px dashed #000;margin:5px 0;"></div>
                 <div class="bold" style="font-size: 16px;">${isReturnInvoice ? 'فاتورة مرتجع' : 'فاتورة بيع'}</div>
                 <div class="invoice-number">${escape_html(invoice_name)}</div>
                 ${isReturnInvoice ? '<div class="return-badge">مرتجع</div>' : ''}
@@ -6261,6 +6267,8 @@ function printStockTransferReceipt(result, deliveryDate) {
 </head>
 <body>
     <div class="header">
+        <img src="/assets/mobile_pos/icons/web-app-manifest-192x192.png" alt="Elnoor-النور" style="width:60px;height:60px;border-radius:12px;margin-bottom:5px;">
+        <div style="font-size:14px;font-weight:bold;">${typeof company_print_name !== 'undefined' ? company_print_name : 'Elnoor-النور'}</div>
         <h2>إيصال تحميل بضاعة</h2>
         <span class="success-badge">مسودة</span>
         <p><strong>${result.stock_entry}</strong></p>
@@ -6729,6 +6737,8 @@ function printCustomerOrders(deliveryDate) {
 </head>
 <body>
   <div class="header">
+    <img src="/assets/mobile_pos/icons/web-app-manifest-192x192.png" alt="Elnoor-النور" style="width:60px;height:60px;border-radius:12px;margin-bottom:5px;">
+    <div style="font-size:14px;font-weight:bold;">${typeof company_print_name !== 'undefined' ? company_print_name : 'Elnoor-النور'}</div>
     <h2>طلبات العملاء</h2>
     <p>تاريخ التسليم: ${deliveryDate}</p>
     <p>التاريخ: ${new Date().toLocaleDateString('ar-SA')}</p>
@@ -7488,6 +7498,8 @@ function printDailySales(salesDate) {
 </head>
 <body>
   <div class="header">
+    <img src="/assets/mobile_pos/icons/web-app-manifest-192x192.png" alt="Elnoor-النور" style="width:60px;height:60px;border-radius:12px;margin-bottom:5px;">
+    <div style="font-size:14px;font-weight:bold;">${typeof company_print_name !== 'undefined' ? company_print_name : 'Elnoor-النور'}</div>
     <h2>مبيعات اليوم</h2>
     <p>التاريخ: ${salesDate}</p>
     <p>وقت الطباعة: ${new Date().toLocaleTimeString('ar-SA')}</p>

@@ -10,8 +10,8 @@ android {
         applicationId "com.elsaeed.pos"
         minSdk 24
         targetSdk 33
-        versionCode 23
-        versionName "1.7.6"
+        versionCode 24
+        versionName "2.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

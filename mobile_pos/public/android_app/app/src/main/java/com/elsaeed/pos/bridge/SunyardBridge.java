@@ -162,6 +162,7 @@ public class SunyardBridge {
             largeRightBundle.putInt("font", PrintConstant.FontSize.LARGE);
 
             // ===== HEADER =====
+            printLogoHeader(printer);
             printer.addText(largeCenterBundle, companyName);
             if (!companyPhone.isEmpty()) {
                 printer.addText(centerBundle, companyPhone);
@@ -427,6 +428,7 @@ public class SunyardBridge {
             largeRightBundle.putInt("font", PrintConstant.FontSize.LARGE);
 
             // ===== HEADER =====
+            printLogoHeader(printer);
             printer.addText(largeCenterBundle, companyName);
             if (!companyPhone.isEmpty()) {
                 printer.addText(centerBundle, companyPhone);
@@ -803,6 +805,26 @@ public class SunyardBridge {
     }
 
     /**
+     * Print company logo from app resources at the top of receipts
+     */
+    private void printLogoHeader(IPrinter printer) {
+        try {
+            Bitmap logo = BitmapFactory.decodeResource(activity.getResources(), com.elsaeed.pos.R.mipmap.ic_launcher);
+            if (logo != null) {
+                // Scale logo to a reasonable receipt width (about 150px wide)
+                int targetWidth = 150;
+                int targetHeight = (int) ((float) logo.getHeight() / logo.getWidth() * targetWidth);
+                Bitmap scaled = Bitmap.createScaledBitmap(logo, targetWidth, targetHeight, true);
+                Bundle imgBundle = new Bundle();
+                imgBundle.putInt("offset", 0);
+                printer.addImage(imgBundle, bitmapToByteArray(scaled));
+            }
+        } catch (Exception e) {
+            Log.w(TAG, "Could not print logo: " + e.getMessage());
+        }
+    }
+
+    /**
      * Print ledger/table report (customer ledger, stock report, etc.)
      * Accepts data with type: 'ledger' or 'raw_text' and text_content field
      */
@@ -845,6 +867,7 @@ public class SunyardBridge {
             } else if (columns != null && rows != null) {
                 // Structured ledger print with columns and rows
                 // ===== HEADER =====
+                printLogoHeader(printer);
                 printer.addText(largeCenterBundle, companyName);
                 if (!companyPhone.isEmpty()) {
                     printer.addText(centerBundle, companyPhone);

@@ -344,7 +344,7 @@ public class MainActivity extends Activity {
             "(function() {" +
             "  if (window.AndroidBridgeReady) return;" +
             "  window.AndroidBridgeReady = true;" +
-            "  console.log('Android Bridge Ready - Elnoor POS v1.3.5');" +
+            "  console.log('Android Bridge Ready - Elnoor POS v2.0.0');" +
             "  " +
             // Fast click - remove 300ms delay
             "  // ===== FAST CLICK =====  " +

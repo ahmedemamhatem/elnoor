@@ -1,11 +1,11 @@
-package com.elsaeed.pos.receiver;
+package com.elnoor.pos.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import com.elsaeed.pos.MainActivity;
+import com.elnoor.pos.MainActivity;
 
 /**
  * Boot receiver to auto-start Mobile POS app when device boots

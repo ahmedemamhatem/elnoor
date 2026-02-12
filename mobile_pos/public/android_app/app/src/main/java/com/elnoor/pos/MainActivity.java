@@ -1,4 +1,4 @@
-package com.elsaeed.pos;
+package com.elnoor.pos;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -26,8 +26,8 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.elsaeed.pos.bridge.SunyardBridge;
-import com.elsaeed.pos.service.DeviceServiceManager;
+import com.elnoor.pos.bridge.SunyardBridge;
+import com.elnoor.pos.service.DeviceServiceManager;
 
 public class MainActivity extends Activity {
     private static final String TAG = "MobilePOS";

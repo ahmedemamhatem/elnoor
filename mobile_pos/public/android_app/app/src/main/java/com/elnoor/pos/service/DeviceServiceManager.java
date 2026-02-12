@@ -1,4 +1,4 @@
-package com.elsaeed.pos.service;
+package com.elnoor.pos.service;
 
 import android.content.ComponentName;
 import android.content.Context;

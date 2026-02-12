@@ -1,4 +1,4 @@
-package com.elsaeed.pos.bridge;
+package com.elnoor.pos.bridge;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -11,8 +11,8 @@ import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 
-import com.elsaeed.pos.MainActivity;
-import com.elsaeed.pos.service.DeviceServiceManager;
+import com.elnoor.pos.MainActivity;
+import com.elnoor.pos.service.DeviceServiceManager;
 import com.sunyard.api.printer.IPrinter;
 import com.sunyard.api.printer.OnPrintListener;
 import com.sunyard.api.printer.PrintConstant;
@@ -809,7 +809,7 @@ public class SunyardBridge {
      */
     private void printLogoHeader(IPrinter printer) {
         try {
-            Bitmap logo = BitmapFactory.decodeResource(activity.getResources(), com.elsaeed.pos.R.mipmap.ic_launcher);
+            Bitmap logo = BitmapFactory.decodeResource(activity.getResources(), com.elnoor.pos.R.mipmap.ic_launcher);
             if (logo != null) {
                 // Scale logo to a reasonable receipt width (about 150px wide)
                 int targetWidth = 150;

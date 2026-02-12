@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.elsaeed.pos'
+    namespace 'com.elnoor.pos'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.elsaeed.pos"
+        applicationId "com.elnoor.pos"
         minSdk 24
         targetSdk 33
         versionCode 24

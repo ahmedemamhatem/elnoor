@@ -1817,6 +1817,21 @@ function setForceGuest(on){try{on?sessionStorage.setItem(FORCE_GUEST_KEY,"1"):se
 
 function isForceGuest(){try{return sessionStorage.getItem(FORCE_GUEST_KEY)==="1"}catch(_){return false}}
 
+function getCsrfToken(){
+try{
+const c=document.cookie.split(';').find(c=>c.trim().startsWith('csrf_token='));
+if(c)return decodeURIComponent(c.split('=')[1].trim());
+}catch(_){}
+return null;
+}
+
+async function ensureCsrfToken(){
+let token=getCsrfToken();
+if(token)return token;
+try{await fetch("/",{credentials:"same-origin",cache:"no-store"});token=getCsrfToken();}catch(_){}
+return token||"None";
+}
+
 async function apiLogin(username,password){
 
 if(!USE_FRAPPE){
@@ -1829,11 +1844,13 @@ return true;
 
 }
 
+const csrfToken=await ensureCsrfToken();
+
 const res=await fetch("/api/method/login",{
 
 method:"POST",
 
-headers:{"Content-Type":"application/json","Accept":"application/json"},
+headers:{"Content-Type":"application/json","Accept":"application/json","X-Frappe-CSRF-Token":csrfToken},
 
 credentials:"same-origin",
 
@@ -1864,13 +1881,15 @@ return true;
 
 try{
 
+const csrfToken=getCsrfToken()||"None";
 const res=await fetch("/api/method/logout",{
 method:"POST",
 credentials:"same-origin",
 cache:"no-store",
 headers:{
 "Accept":"application/json",
-"Content-Type":"application/json"
+"Content-Type":"application/json",
+"X-Frappe-CSRF-Token":csrfToken
 }
 });
 
